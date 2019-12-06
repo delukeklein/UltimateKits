@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 
+import com.delukeklein.ultimatekits.kit.category.BaseCategory;
+
 public interface Kit {
 
 	void giveKit(final Player player);
