@@ -1,25 +1,13 @@
 package com.delukeklein.ultimatekits.kit;
 
-public final class Level {
+public interface Level {
 
-	private int price;
+	public void setPrice(int price);
 	
-	private String name;
+	public void setName(String name);
+	
+	public int getPrice();
 
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public int getPrice() {
-		return price;
-	}
-
-	public String getName() {
-		return name;
-	}
+	public String getName();
 
 }
