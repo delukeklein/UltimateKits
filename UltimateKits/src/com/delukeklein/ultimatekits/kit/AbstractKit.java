@@ -16,6 +16,10 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	
 	private List<String> description;
 	
+	public AbstractKit() {
+		super();
+	}
+	
 	@SuppressWarnings("unchecked")
 	public AbstractKit(Map<String, Object> map) {
 		 this.price = (int) map.get("price");
