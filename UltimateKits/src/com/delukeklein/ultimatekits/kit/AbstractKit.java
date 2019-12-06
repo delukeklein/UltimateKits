@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
-import com.delukeklein.ultimatekits.kit.category.BaseCategory;
 
 public abstract class AbstractKit implements Kit, ConfigurationSerializable {
 
@@ -14,7 +13,7 @@ public abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	
 	private String name;
 	
-	private BaseCategory category;
+	private String category;
 	
 	private List<String> description;
 	
@@ -24,7 +23,7 @@ public abstract class AbstractKit implements Kit, ConfigurationSerializable {
 		 
 		 this.name = (String) map.get("name");
 		 
-		 this.category = (BaseCategory) map.get("category");
+		 this.category = (String) map.get("category");
 		 
 		 this.description = (List<String>) map.get("description");
 	}
@@ -40,7 +39,7 @@ public abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 
 	@Override
-	public void setCategory(final BaseCategory category) {
+	public void setCategory(final String category) {
 		this.category = category;
 	}
 	
@@ -60,7 +59,7 @@ public abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 	
 	@Override
-	public BaseCategory getCategory() {
+	public String getCategory() {
 		return category;
 	}
 

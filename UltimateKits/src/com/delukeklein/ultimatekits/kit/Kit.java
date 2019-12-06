@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 
-import com.delukeklein.ultimatekits.kit.category.BaseCategory;
-
 public interface Kit {
 
 	void giveKit(final Player player);
@@ -14,7 +12,7 @@ public interface Kit {
 	
 	void setName(final String name);
 	
-	void setCategory(final BaseCategory category);
+	void setCategory(final String category);
 	
 	void setDescription(final List<String> description);
 	
@@ -22,7 +20,7 @@ public interface Kit {
 	
 	String getName();
 	
-	BaseCategory getCategory();
+	String getCategory();
 	
 	List<String> getDescription();
 	
