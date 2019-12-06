@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 
 import com.delukeklein.ultimatekits.kit.equipment.Equipment;
 
-public final class LevelKit extends AbstractKit {
+final class LevelKit extends AbstractKit {
 	
 	private final Map<Level, Equipment> levels;
 	

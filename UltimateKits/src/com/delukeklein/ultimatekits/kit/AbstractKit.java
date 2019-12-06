@@ -6,8 +6,7 @@ import java.util.Map;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
-
-public abstract class AbstractKit implements Kit, ConfigurationSerializable {
+abstract class AbstractKit implements Kit, ConfigurationSerializable {
 
 	private int price;
 	
