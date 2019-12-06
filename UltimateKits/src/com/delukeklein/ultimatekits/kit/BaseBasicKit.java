@@ -1,15 +1,26 @@
 package com.delukeklein.ultimatekits.kit;
 
+
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+
 final class BaseBasicKit extends AbstractKit implements BasicKit {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;
+	
+	@SuppressWarnings("unchecked")
+	public BaseBasicKit(final Map<String, Object> map) {
+		super(map);
+		
+		armor = toItemStackArray((List<ItemStack>) map.get("armor"));
+		storage = toItemStackArray((List<ItemStack>) map.get("storage"));
+	}
 	
 	@Override
 	public void giveKit(Player player) {
@@ -44,5 +55,9 @@ final class BaseBasicKit extends AbstractKit implements BasicKit {
 		map.put("storage", Arrays.asList(storage));
 		
 		return map;
+	}
+	
+	private ItemStack[] toItemStackArray(List<ItemStack> list) {
+		return (ItemStack[]) list.toArray();
 	}
 }

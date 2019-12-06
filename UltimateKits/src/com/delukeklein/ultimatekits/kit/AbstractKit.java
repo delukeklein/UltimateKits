@@ -21,7 +21,7 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public AbstractKit(Map<String, Object> map) {
+	protected AbstractKit(Map<String, Object> map) {
 		 this.price = (int) map.get("price");
 		 
 		 this.name = (String) map.get("name");
@@ -32,42 +32,42 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 	
 	@Override
-	public void setPrice(int price) {
+	public final void setPrice(int price) {
 		this.price = price;
 	}
 
 	@Override
-	public void setName(String name) {
+	public final  void setName(String name) {
 		this.name = name;
 	}
 
 	@Override
-	public void setCategory(final String category) {
+	public final void setCategory(final String category) {
 		this.category = category;
 	}
 	
 	@Override
-	public void setDescription(List<String> description) {
+	public final void setDescription(List<String> description) {
 		this.description = description;
 	}
 
 	@Override
-	public int getPrice() {
+	public final int getPrice() {
 		return price;
 	}
 
 	@Override
-	public String getName() {
+	public final  String getName() {
 		return name;
 	}
 	
 	@Override
-	public String getCategory() {
+	public final String getCategory() {
 		return category;
 	}
 
 	@Override
-	public List<String> getDescription() {
+	public final List<String> getDescription() {
 		return description;
 	}
 	
