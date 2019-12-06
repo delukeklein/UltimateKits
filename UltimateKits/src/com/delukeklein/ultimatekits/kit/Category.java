@@ -1,4 +1,4 @@
-package com.delukeklein.ultimatekits.api.kit;
+package com.delukeklein.ultimatekits.kit;
 
 public interface Category {
 

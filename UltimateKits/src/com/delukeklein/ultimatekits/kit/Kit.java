@@ -1,10 +1,8 @@
-package com.delukeklein.ultimatekits.api.kit;
+package com.delukeklein.ultimatekits.kit;
 
 import java.util.List;
 
 import org.bukkit.entity.Player;
-
-import com.delukeklein.ultimatekits.kit.BaseCategory;
 
 public interface Kit {
 

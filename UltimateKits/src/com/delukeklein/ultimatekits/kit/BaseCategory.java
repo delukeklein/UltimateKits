@@ -1,7 +1,5 @@
 package com.delukeklein.ultimatekits.kit;
 
-import com.delukeklein.ultimatekits.api.kit.Category;
-
 public final class BaseCategory implements Category {
 
 	private String name;
