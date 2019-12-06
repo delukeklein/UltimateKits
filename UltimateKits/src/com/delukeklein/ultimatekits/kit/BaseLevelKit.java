@@ -28,7 +28,7 @@ final class BaseLevelKit extends AbstractKit implements LevelKit {
 
 	@Override
 	public boolean removeLevel(String levelName) {
-		return levels.removeIf(l -> l.hasName(levelName));
+		return levels.removeIf(l -> l.getName() == levelName);
 	}
 
 	@Override

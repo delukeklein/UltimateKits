@@ -1,21 +1,22 @@
 package com.delukeklein.ultimatekits.kit;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.delukeklein.ultimatekits.kit.equipment.Equipment;
-
-public class Level implements Equipment {
-
-	private int price;
-	
-	private String name;
+public class BaseBasicKit extends AbstractKit implements BasicKit {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;
 	
 	@Override
+	public void giveKit(Player player) {
+		// TODO Auto-generated method stub
+	}
+	
+	@Override
 	public void setArmor(ItemStack[] armor) {
-		this.armor = armor;	
+		this.armor = armor;
+		
 	}
 
 	@Override
@@ -32,21 +33,4 @@ public class Level implements Equipment {
 	public ItemStack[] getStorage() {
 		return storage;
 	}
-	
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public int getPrice() {
-		return price;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
 }
