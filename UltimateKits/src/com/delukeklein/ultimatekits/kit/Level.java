@@ -8,6 +8,8 @@ public interface Level {
 	
 	public int getPrice();
 
+	public boolean hasName(String name);
+	
 	public String getName();
 
 }

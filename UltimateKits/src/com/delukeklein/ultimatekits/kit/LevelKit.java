@@ -1,6 +1,5 @@
 package com.delukeklein.ultimatekits.kit;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.bukkit.entity.Player;
@@ -11,12 +10,6 @@ final class LevelKit extends AbstractKit {
 	
 	private final Map<Level, Equipment> levels;
 	
-	private LevelKit() {
-		super();
-		
-		this.levels = new HashMap<>();
-	}
-	
 	@SuppressWarnings("unchecked")
 	public LevelKit(final Map<String, Object> map) {
 		super(map);
@@ -26,7 +19,7 @@ final class LevelKit extends AbstractKit {
 	
 	@Override
 	public void giveKit(final Player player) {
-		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -37,5 +30,4 @@ final class LevelKit extends AbstractKit {
 		
 		return map;
 	}
-
 }
