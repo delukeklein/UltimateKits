@@ -1,10 +1,12 @@
 package com.delukeklein.ultimatekits.kit;
 
-public final class Category {
+import com.delukeklein.ultimatekits.api.kit.Category;
+
+public final class BaseCategory implements Category {
 
 	private String name;
 	
-	public Category(final String name) {
+	public BaseCategory(final String name) {
 		this.name = name;
 	}
 
