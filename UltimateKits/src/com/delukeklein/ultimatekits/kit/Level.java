@@ -1,10 +1,15 @@
 package com.delukeklein.ultimatekits.kit;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.inventory.ItemStack;
 
 import com.delukeklein.ultimatekits.kit.equipment.Equipment;
 
-public class Level implements Equipment {
+public class Level implements Equipment, ConfigurationSerializable {
 
 	private int price;
 	
@@ -47,6 +52,18 @@ public class Level implements Equipment {
 	
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public Map<String, Object> serialize() {
+		final Map<String, Object> map = new HashMap<>();
+		
+		map.put("price", price);
+		map.put("name", name);
+		map.put("armor", Arrays.asList(armor));
+		map.put("storage", Arrays.asList(storage));
+		
+		return map;
 	}
 	
 }

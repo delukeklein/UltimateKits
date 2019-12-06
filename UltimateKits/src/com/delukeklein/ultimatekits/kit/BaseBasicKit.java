@@ -1,9 +1,12 @@
 package com.delukeklein.ultimatekits.kit;
 
+import java.util.Arrays;
+import java.util.Map;
+
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class BaseBasicKit extends AbstractKit implements BasicKit {
+final class BaseBasicKit extends AbstractKit implements BasicKit {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;
@@ -15,8 +18,7 @@ public class BaseBasicKit extends AbstractKit implements BasicKit {
 	
 	@Override
 	public void setArmor(ItemStack[] armor) {
-		this.armor = armor;
-		
+		this.armor = armor;	
 	}
 
 	@Override
@@ -32,5 +34,15 @@ public class BaseBasicKit extends AbstractKit implements BasicKit {
 	@Override
 	public ItemStack[] getStorage() {
 		return storage;
+	}
+	
+	@Override
+	public Map<String, Object> serialize() {
+		final Map<String, Object> map = super.serialize();
+
+		map.put("armor", Arrays.asList(armor));
+		map.put("storage", Arrays.asList(storage));
+		
+		return map;
 	}
 }
