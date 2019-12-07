@@ -2,6 +2,8 @@ package com.delukeklein.ultimatekits.kit;
 
 import java.util.List;
 
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
+
 public final class KitFactory {
 
 	private int price;
@@ -52,5 +54,10 @@ public final class KitFactory {
 		kit.setDescription(description);
 
 		return kit;
+	}
+	
+	public static void initSerializable() {
+		ConfigurationSerialization.registerClass(BasicKit.class);
+		ConfigurationSerialization.registerClass(LevelKit.class);
 	}
 }
