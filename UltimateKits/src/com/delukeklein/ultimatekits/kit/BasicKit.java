@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
 
 import com.delukeklein.ultimatekits.kit.equipment.Equipment;
 
-public final class BasicKit extends AbstractKit implements Equipment {
+final class BasicKit extends AbstractKit implements Equipment {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;

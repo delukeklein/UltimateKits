@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.bukkit.entity.Player;
 
-final class LevelKit extends AbstractKit {
+final class LevelKit extends AbstractKit implements Levelable {
 	
 	private final List<Level> levels;
 	
@@ -21,11 +21,13 @@ final class LevelKit extends AbstractKit {
 		
 	}
 	
-	public void addLevel(Level level) {
+	@Override
+	public void addLevel(final Level level) {
 		levels.add(level);
 	}
 	
-	public boolean removeLevel(String levelName) {
+	@Override
+	public boolean removeLevel(final String levelName) {
 		return levels.removeIf(l -> l.getName() == levelName);
 	}
 

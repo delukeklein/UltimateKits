@@ -4,7 +4,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.delukeklein.ultimatekits.configuration.KitConfiguration;
 
-
 public class UltimateKits extends JavaPlugin {
 
 	private KitConfiguration kitConfig;
