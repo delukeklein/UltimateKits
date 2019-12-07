@@ -14,6 +14,13 @@ final class BasicKit extends AbstractKit implements Equipment {
 	private ItemStack[] armor;
 	private ItemStack[] storage;
 	
+	public BasicKit() {
+		super();
+		
+		this.armor = new ItemStack[0];
+		this.storage = new ItemStack[0];
+	}
+	
 	@SuppressWarnings("unchecked")
 	public BasicKit(final Map<String, Object> map) {
 		super(map);
@@ -22,10 +29,6 @@ final class BasicKit extends AbstractKit implements Equipment {
 		storage = ((List<ItemStack>) map.get("storage")).toArray(storage);
 	}
 	
-	public BasicKit() {
-		super();
-	}
-
 	@Override
 	public void giveKit(Player player) {
 		// TODO Auto-generated method stub
