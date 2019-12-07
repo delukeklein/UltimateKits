@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.bukkit.entity.Player;
 
+import com.delukeklein.ultimatekits.kit.Levelable;;
+
 public final class LevelKit extends AbstractKit implements Levelable {
 	
 	private final List<Level> levels;
