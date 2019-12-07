@@ -22,7 +22,7 @@ public final class KitFactory {
 		this.price = price;
 		return this;
 	}
-	
+
 	public final KitFactory isLevelable(final boolean levelable) {
 		this.levelable = levelable;
 		return this;
@@ -44,13 +44,13 @@ public final class KitFactory {
 	}
 
 	public Kit build() {
-		Kit kit = (levelable) ? new LevelKit() : new BasicKit();
-		
+		final Kit kit = (levelable) ? new LevelKit() : new BasicKit();
+
 		kit.setPrice(price);
 		kit.setName(name);
 		kit.setCategory(category);
-		kit.setDescription(description);		
-		
-		return kit;		
+		kit.setDescription(description);
+
+		return kit;
 	}
 }

@@ -1,6 +1,6 @@
 package com.delukeklein.ultimatekits.kit;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -73,7 +73,7 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	
 	@Override
 	public Map<String, Object> serialize() {
-		final Map<String, Object> map = new HashMap<>();
+		final Map<String, Object> map = new LinkedHashMap<>();
 		
 		map.put("price", price);
 		map.put("name", name);
