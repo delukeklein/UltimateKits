@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.delukeklein.ultimatekits.UltimateKits;
 
-class BaseConfiguration {
+abstract class BaseConfiguration {
 
 	protected FileConfiguration config;
 	
@@ -40,7 +40,7 @@ class BaseConfiguration {
         reload();
 	}
 	
-	public void reload() {
+	public final void reload() {
 		try {
 			config.load(file);
 		} catch (IOException | InvalidConfigurationException e) {
@@ -48,7 +48,7 @@ class BaseConfiguration {
 		}
 	}
 
-	public void save() {
+	public final void save() {
 		try {
 			config.save(file);
 		} catch (IOException e) {
