@@ -19,12 +19,12 @@ public class Level implements Equipment, ConfigurationSerializable {
 	private ItemStack[] storage;
 	
 	@Override
-	public void setArmor(ItemStack[] armor) {
+	public void setArmor(final ItemStack[] armor) {
 		this.armor = armor;	
 	}
 
 	@Override
-	public void setStorage(ItemStack[] storage) {
+	public void setStorage(final ItemStack[] storage) {
 		this.storage = storage;	
 	}
 	
@@ -38,11 +38,11 @@ public class Level implements Equipment, ConfigurationSerializable {
 		return storage;
 	}
 	
-	public void setPrice(int price) {
+	public void setPrice(final int price) {
 		this.price = price;
 	}
 	
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 	

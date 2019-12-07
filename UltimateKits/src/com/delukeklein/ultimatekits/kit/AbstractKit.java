@@ -32,12 +32,12 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 	
 	@Override
-	public final void setPrice(int price) {
+	public final void setPrice(final int price) {
 		this.price = price;
 	}
 
 	@Override
-	public final  void setName(String name) {
+	public final  void setName(final String name) {
 		this.name = name;
 	}
 
@@ -47,7 +47,7 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 	
 	@Override
-	public final void setDescription(List<String> description) {
+	public final void setDescription(final List<String> description) {
 		this.description = description;
 	}
 

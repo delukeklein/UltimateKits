@@ -6,15 +6,15 @@ import org.bukkit.entity.Player;
 
 public interface Kit {
 
-	void giveKit(final Player player);
+	void setPrice(int price);
 
-	void setPrice(final int price);
+	void setName(String name);
 
-	void setName(final String name);
-
-	void setCategory(final String category);
-
-	void setDescription(final List<String> description);
+	void setCategory(String category);
+	
+	void setDescription(List<String> description);
+	
+	void giveKit(Player player);
 
 	int getPrice();
 

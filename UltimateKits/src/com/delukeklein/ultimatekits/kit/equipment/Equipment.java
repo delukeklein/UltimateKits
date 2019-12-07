@@ -4,9 +4,9 @@ import org.bukkit.inventory.ItemStack;
 
 public interface Equipment {
 
-	public void setArmor(final ItemStack[] armor);
+	public void setArmor(ItemStack[] armor);
 
-	public void setStorage(final ItemStack[] storage);
+	public void setStorage(ItemStack[] storage);
 	
 	public ItemStack[] getArmor();
 	

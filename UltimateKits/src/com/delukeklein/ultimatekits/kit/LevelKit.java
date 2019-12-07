@@ -10,17 +10,17 @@ final class LevelKit extends AbstractKit implements Levelable {
 	
 	private final List<Level> levels;
 	
+	public LevelKit() {
+		super();
+		
+		this.levels = new ArrayList<>();
+	}
+	
 	@SuppressWarnings("unchecked")
 	public LevelKit(final Map<String, Object> map) {
 		super(map);
 		
 		this.levels = (List<Level>) map.get("levels");
-	}
-	
-	public LevelKit() {
-		super();
-		
-		this.levels = new ArrayList<>();
 	}
 
 	@Override

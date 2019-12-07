@@ -18,7 +18,7 @@ public final class KitFactory {
 
 	}
 
-	public final KitFactory setPrice(int price) {
+	public final KitFactory setPrice(final int price) {
 		this.price = price;
 		return this;
 	}
