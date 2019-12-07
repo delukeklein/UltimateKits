@@ -22,6 +22,10 @@ final class BasicKit extends AbstractKit implements Equipment {
 		storage = ((List<ItemStack>) map.get("storage")).toArray(storage);
 	}
 	
+	public BasicKit() {
+		super();
+	}
+
 	@Override
 	public void giveKit(Player player) {
 		// TODO Auto-generated method stub

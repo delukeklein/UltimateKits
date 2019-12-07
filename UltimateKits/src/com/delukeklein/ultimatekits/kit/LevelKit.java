@@ -1,5 +1,6 @@
 package com.delukeklein.ultimatekits.kit;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,12 @@ final class LevelKit extends AbstractKit implements Levelable {
 		this.levels = (List<Level>) map.get("levels");
 	}
 	
+	public LevelKit() {
+		super();
+		
+		this.levels = new ArrayList<>();
+	}
+
 	@Override
 	public void giveKit(final Player player) {
 		
