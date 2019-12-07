@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
 
 import com.delukeklein.ultimatekits.kit.equipment.Equipment;
 
-final class BasicKit extends AbstractKit implements Equipment {
+public final class BasicKit extends AbstractKit implements Equipment {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;
@@ -22,11 +22,11 @@ final class BasicKit extends AbstractKit implements Equipment {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public BasicKit(final Map<String, Object> map) {
+	public BasicKit(Map<String, Object> map) {
 		super(map);
 		
-		armor = ((List<ItemStack>) map.get("armor")).toArray(armor);
-		storage = ((List<ItemStack>) map.get("storage")).toArray(storage);
+		armor = ((List<ItemStack>) map.get("armor")).toArray(new ItemStack[0]);
+		storage = ((List<ItemStack>) map.get("storage")).toArray(new ItemStack[0]);
 	}
 	
 	@Override

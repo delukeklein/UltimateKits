@@ -1,8 +1,7 @@
 package com.delukeklein.ultimatekits.kit;
 
+import java.util.Arrays;
 import java.util.List;
-
-import org.bukkit.configuration.serialization.ConfigurationSerialization;
 
 public final class KitFactory {
 
@@ -15,9 +14,13 @@ public final class KitFactory {
 	private String category;
 
 	private List<String> description;
-
+	
 	public KitFactory() {
-
+		this.price = 0;
+		this.levelable = false;
+		this.name = "";
+		this.category = "";
+		this.description = Arrays.asList(new String[] { "" });
 	}
 
 	public final KitFactory setPrice(final int price) {
@@ -55,9 +58,5 @@ public final class KitFactory {
 
 		return kit;
 	}
-	
-	public static void initSerializable() {
-		ConfigurationSerialization.registerClass(BasicKit.class);
-		ConfigurationSerialization.registerClass(LevelKit.class);
-	}
+
 }
