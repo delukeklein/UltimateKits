@@ -16,5 +16,4 @@ public class KitConfiguration extends BaseConfiguration {
 	public void setKit(final Kit kit) {
 		config.set(kit.getName(), kit);
 	}
-	
 }

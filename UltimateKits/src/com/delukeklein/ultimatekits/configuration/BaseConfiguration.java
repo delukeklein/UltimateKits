@@ -51,10 +51,8 @@ abstract class BaseConfiguration {
 	public final void save() {
 		try {
 			config.save(file);
-		} catch (IOException e) {
-			
+		} catch (IOException e) {		
 			e.printStackTrace();
 		}	
 	}
-
 }

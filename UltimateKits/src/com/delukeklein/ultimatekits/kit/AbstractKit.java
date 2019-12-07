@@ -37,7 +37,7 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	}
 
 	@Override
-	public final  void setName(final String name) {
+	public final void setName(final String name) {
 		this.name = name;
 	}
 

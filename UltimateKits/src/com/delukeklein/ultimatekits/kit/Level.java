@@ -65,5 +65,4 @@ public class Level implements Equipment, ConfigurationSerializable {
 		
 		return map;
 	}
-	
 }
