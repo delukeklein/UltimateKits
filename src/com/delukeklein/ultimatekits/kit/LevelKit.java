@@ -1,6 +1,5 @@
 package com.delukeklein.ultimatekits.kit;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,10 +12,10 @@ public final class LevelKit extends AbstractKit implements Levelable {
 	
 	private final List<Level> levels;
 	
-	public LevelKit() {
-		super();
-		
-		this.levels = new LinkedList<>();
+	public LevelKit(final String name) {
+		super(name);
+
+		this.levels = List.of();
 	}
 	
 	@SuppressWarnings("unchecked")

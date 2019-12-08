@@ -1,6 +1,5 @@
 package com.delukeklein.ultimatekits.kit;
 
-import java.util.Arrays;
 import java.util.List;
 
 public final class KitFactory {
@@ -20,7 +19,7 @@ public final class KitFactory {
 		this.levelable = false;
 		this.name = "";
 		this.category = "";
-		this.description = Arrays.asList(new String[] { "" });
+		this.description = List.of("");
 	}
 
 	public final KitFactory setPrice(final int price) {
@@ -49,14 +48,12 @@ public final class KitFactory {
 	}
 
 	public Kit build() {
-		final Kit kit = (levelable) ? new LevelKit() : new BasicKit();
+		final Kit kit = (levelable) ? new LevelKit(name) : new BasicKit(name);
 
 		kit.setPrice(price);
-		kit.setName(name);
 		kit.setCategory(category);
 		kit.setDescription(description);
 
 		return kit;
 	}
-
 }

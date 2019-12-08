@@ -13,9 +13,9 @@ public final class BasicKit extends AbstractKit implements Equipment {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;
-	
-	public BasicKit() {
-		super();
+
+	public BasicKit(final String name) {
+		super(name);
 		
 		this.armor = new ItemStack[0];
 		this.storage = new ItemStack[0];

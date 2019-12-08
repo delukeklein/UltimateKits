@@ -3,7 +3,7 @@ package com.delukeklein.ultimatekits.configuration;
 import com.delukeklein.ultimatekits.UltimateKits;
 import com.delukeklein.ultimatekits.kit.Kit;
 
-public class KitConfiguration extends BaseConfiguration {
+public class KitConfiguration extends AbstractConfiguration {
 	
 	public KitConfiguration(UltimateKits plugin) {
 		super(plugin, "kits", "", true);

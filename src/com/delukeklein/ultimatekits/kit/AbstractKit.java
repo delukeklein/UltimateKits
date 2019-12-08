@@ -16,8 +16,8 @@ abstract class AbstractKit implements Kit, ConfigurationSerializable {
 	
 	private List<String> description;
 	
-	public AbstractKit() {
-		super();
+	public AbstractKit(final String name) {
+		this.name = name;
 	}
 	
 	@SuppressWarnings("unchecked")

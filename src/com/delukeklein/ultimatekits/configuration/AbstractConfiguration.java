@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.delukeklein.ultimatekits.UltimateKits;
 
-abstract class BaseConfiguration {
+abstract class AbstractConfiguration {
 
 	protected FileConfiguration config;
 	
@@ -17,7 +17,7 @@ abstract class BaseConfiguration {
 	
 	private File file;
 
-	protected BaseConfiguration(final UltimateKits plugin, final String name, final String folder, final boolean saveResource) {
+	protected AbstractConfiguration(final UltimateKits plugin, final String name, final String folder, final boolean saveResource) {
 		config = new YamlConfiguration();
 		
         file = new File(plugin.getDataFolder() + folder, name + EXTENSION);
