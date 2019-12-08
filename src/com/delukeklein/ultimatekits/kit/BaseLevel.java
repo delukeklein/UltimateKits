@@ -7,7 +7,6 @@ import java.util.Map;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.inventory.ItemStack;
 
-import com.delukeklein.ultimatekits.kit.equipment.Equipment;
 import com.delukeklein.ultimatekits.kit.equipment.Level;
 
 public class BaseLevel implements Level, ConfigurationSerializable {
