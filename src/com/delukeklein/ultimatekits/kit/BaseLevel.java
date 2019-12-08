@@ -7,6 +7,9 @@ import java.util.Map;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.inventory.ItemStack;
 
+import com.delukeklein.ultimatekits.kit.equipment.Equipment;
+import com.delukeklein.ultimatekits.kit.equipment.Level;
+
 public class BaseLevel implements Level, ConfigurationSerializable {
 
 	private int price;
@@ -15,6 +18,16 @@ public class BaseLevel implements Level, ConfigurationSerializable {
 	
 	private ItemStack[] armor;
 	private ItemStack[] storage;
+	
+	@Override
+	public void setPrice(final int price) {
+		this.price = price;
+	}
+	
+	@Override
+	public void setName(final String name) {
+		this.name = name;
+	}
 	
 	@Override
 	public void setArmor(final ItemStack[] armor) {
@@ -27,6 +40,16 @@ public class BaseLevel implements Level, ConfigurationSerializable {
 	}
 	
 	@Override
+	public int getPrice() {
+		return price;
+	}
+	
+	@Override
+	public String getName() {
+		return name;
+	}
+	
+	@Override
 	public ItemStack[] getArmor() {
 		return armor;
 	}
@@ -34,22 +57,6 @@ public class BaseLevel implements Level, ConfigurationSerializable {
 	@Override
 	public ItemStack[] getStorage() {
 		return storage;
-	}
-	
-	public void setPrice(final int price) {
-		this.price = price;
-	}
-	
-	public void setName(final String name) {
-		this.name = name;
-	}
-	
-	public int getPrice() {
-		return price;
-	}
-	
-	public String getName() {
-		return name;
 	}
 
 	@Override
