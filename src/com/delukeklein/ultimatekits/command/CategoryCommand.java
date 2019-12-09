@@ -27,7 +27,7 @@ public class CategoryCommand implements CommandExecutor {
 		final SubCommand subCommand = commandMap.get(args[0].toLowerCase());
 
 		if (subCommand != null) {
-			subCommand.execute(sender, Arrays.copyOfRange(args, 1, args.length - 1));
+			subCommand.execute(sender, Arrays.copyOfRange(args, 1, args.length));
 		} else {
 			// TODO Error message
 		}

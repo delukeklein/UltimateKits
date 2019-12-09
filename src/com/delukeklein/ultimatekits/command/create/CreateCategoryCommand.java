@@ -1,7 +1,5 @@
 package com.delukeklein.ultimatekits.command.create;
 
-import java.util.Arrays;
-
 import org.bukkit.command.CommandSender;
 
 import com.delukeklein.ultimatekits.command.SubCommand;
@@ -17,7 +15,7 @@ public class CreateCategoryCommand implements SubCommand {
 	
 	@Override
 	public void execute(final CommandSender sender, final String[] args) {
-		categoryConfig.addCategory(Arrays.toString(args));
+		categoryConfig.addCategory(String.join("", args));
 		categoryConfig.save();
 	}
 }

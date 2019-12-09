@@ -12,13 +12,15 @@ import com.delukeklein.ultimatekits.kit.LevelKit;
 public class UltimateKits extends JavaPlugin {
 
 	@Override
+	public void onLoad() {
+		initSerializables();
+	}
+	
+	@Override
 	public void onEnable() {
 		final KitConfiguration kitConfig = new KitConfiguration(this);
 
-		getCommand("kit").setExecutor(new KitCommand(kitConfig));
-		
-		
-		initSerializables();
+		getCommand("kit").setExecutor(new KitCommand(kitConfig));		
 	}
 	
 	@Override

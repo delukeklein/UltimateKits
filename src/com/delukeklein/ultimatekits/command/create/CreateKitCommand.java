@@ -1,7 +1,5 @@
 package com.delukeklein.ultimatekits.command.create;
 
-import java.util.Arrays;
-
 import org.bukkit.command.CommandSender;
 
 import com.delukeklein.ultimatekits.command.SubCommand;
@@ -18,7 +16,7 @@ public class CreateKitCommand implements SubCommand {
 	
 	@Override
 	public void execute(CommandSender sender, String[] args) {
-		kitConfig.setKit(new BasicKit(Arrays.toString(args)));		
+		kitConfig.setKit(new BasicKit(String.join(" ", args)));		
 		kitConfig.save();	
 	}
 }
