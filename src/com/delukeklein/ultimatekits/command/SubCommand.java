@@ -2,8 +2,8 @@ package com.delukeklein.ultimatekits.command;
 
 import org.bukkit.command.CommandSender;
 
-public interface SubCommand {
+public interface SubCommand extends SyntaxError {
 
-	void execute(CommandSender sender, String[] args);
+	boolean execute(CommandSender sender, String[] args);
 	
 }

@@ -55,4 +55,9 @@ abstract class AbstractConfiguration {
 			e.printStackTrace();
 		}	
 	}
+	
+	
+	public final String parseToKey(final String str) {
+		return str.replace(' ', '_').toLowerCase();
+	}
 }

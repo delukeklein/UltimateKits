@@ -15,8 +15,22 @@ public class CreateKitCommand implements SubCommand {
 	}
 	
 	@Override
-	public void execute(CommandSender sender, String[] args) {
-		kitConfig.setKit(new BasicKit(String.join(" ", args)));		
-		kitConfig.save();	
+	public boolean execute(CommandSender sender, String[] args) {		
+		final String name = String.join(" ", args);
+		
+		final boolean contains = kitConfig.contains(name);
+		
+		if(!contains) {
+			kitConfig.setKit(new BasicKit(name));		
+			kitConfig.save();	
+		}
+		
+		return contains;
+	}
+
+	@Override
+	public void severe(CommandSender sender, String[] args) {
+		// TODO Auto-generated method stub
+		
 	}
 }

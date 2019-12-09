@@ -18,6 +18,10 @@ public class CategoryConfiguration extends AbstractConfiguration {
 		config.set("categories", categories);
 	}
 	
+	public boolean contains(final String category) {
+		return getCategories().contains(category);
+	}
+	
 	public List<String> getCategories() {
 		return config.getStringList("categories");
 	}
