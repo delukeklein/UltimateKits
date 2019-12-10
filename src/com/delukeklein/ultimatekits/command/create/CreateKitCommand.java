@@ -1,10 +1,9 @@
 package com.delukeklein.ultimatekits.command.create;
 
-import org.bukkit.command.CommandSender;
-
 import com.delukeklein.ultimatekits.command.SubCommand;
 import com.delukeklein.ultimatekits.configuration.KitConfiguration;
 import com.delukeklein.ultimatekits.kit.BasicKit;
+import org.bukkit.command.CommandSender;
 
 public class CreateKitCommand implements SubCommand {
 
@@ -30,7 +29,6 @@ public class CreateKitCommand implements SubCommand {
 
 	@Override
 	public void severe(CommandSender sender, String[] args) {
-		// TODO Auto-generated method stub
 		
 	}
 }

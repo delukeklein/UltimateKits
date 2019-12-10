@@ -1,11 +1,11 @@
 package com.delukeklein.ultimatekits.command;
 
-import java.util.Arrays;
-import java.util.Map;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
+import java.util.Arrays;
+import java.util.Map;
 
 public abstract class AbstractCommand implements CommandExecutor {
 
@@ -27,6 +27,4 @@ public abstract class AbstractCommand implements CommandExecutor {
 	protected final void register(final String argument,  final SubCommand subCommand) {
 		commandMap.put(argument, subCommand);
 	}
-
-
 }
