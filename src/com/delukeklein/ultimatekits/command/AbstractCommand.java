@@ -5,15 +5,15 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
-import java.util.Map;
+import java.util.HashMap;
 
 public abstract class AbstractCommand implements CommandExecutor {
 
-	private final Map<String, SubCommand> commandMap = Map.of();
+	private final HashMap<String, SubCommand> mutableCommandMap = new HashMap<>();
 	
 	@Override
 	public final boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		final SubCommand subCommand = commandMap.get(args[0].toLowerCase());
+		final SubCommand subCommand = mutableCommandMap.get(args[0].toLowerCase());
 
 		if (subCommand != null) {
 			execute(sender, subCommand, Arrays.copyOfRange(args, 1, args.length));
@@ -24,7 +24,7 @@ public abstract class AbstractCommand implements CommandExecutor {
 	
 	protected abstract void execute(CommandSender sender, SubCommand subCommand,  String[] args);
 	
-	protected final void register(final String argument,  final SubCommand subCommand) {
-		commandMap.put(argument, subCommand);
+	protected final void register(final String argument, final SubCommand subCommand) {
+		mutableCommandMap.put(argument, subCommand);
 	}
 }

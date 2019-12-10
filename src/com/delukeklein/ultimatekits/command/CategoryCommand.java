@@ -17,7 +17,7 @@ public class CategoryCommand extends AbstractCommand {
 
 	@Override
 	protected void execute(CommandSender sender, SubCommand subCommand, String[] args) {	
-		if(!subCommand.execute(sender, args)) {	
+		if(subCommand.execute(sender, args)) {
 			subCommand.severe(sender, args);
 		}
 	}

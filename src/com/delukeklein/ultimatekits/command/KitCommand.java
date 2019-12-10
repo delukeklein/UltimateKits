@@ -15,7 +15,7 @@ public class KitCommand extends AbstractCommand {
 
 	@Override
 	protected void execute(final  CommandSender sender, final SubCommand subCommand, final String[] args) {
-		if (!subCommand.execute(sender, args)) {
+		if (subCommand.execute(sender, args)) {
 			subCommand.severe(sender, args);
 		}
 	}

@@ -24,7 +24,7 @@ public class CreateKitCommand implements SubCommand {
 			kitConfig.save();	
 		}
 		
-		return contains;
+		return !contains;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.delukeklein.ultimatekits;
 
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,14 +14,14 @@ public class UltimateKits extends JavaPlugin {
 
 	@Override
 	public void onLoad() {
-		initSerializables();
+		initSerializable();
 	}
 	
 	@Override
 	public void onEnable() {
 		final KitConfiguration kitConfig = new KitConfiguration(this);
 
-		getCommand("kit").setExecutor(new KitCommand(kitConfig));		
+		registerCommand("kit", new KitCommand(kitConfig));
 	}
 	
 	@Override
@@ -28,8 +29,14 @@ public class UltimateKits extends JavaPlugin {
 		
 	}
 	
-	private void initSerializables() {
+	private void initSerializable() {
 		ConfigurationSerialization.registerClass(BasicKit.class);
 		ConfigurationSerialization.registerClass(LevelKit.class);
+	}
+
+	private void registerCommand(final String name, final CommandExecutor executor) {
+		if(executor != null) {
+			getCommand(name).setExecutor(executor);
+		}
 	}
 }

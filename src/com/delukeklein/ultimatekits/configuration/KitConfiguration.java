@@ -2,6 +2,7 @@ package com.delukeklein.ultimatekits.configuration;
 
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
 
 import com.delukeklein.ultimatekits.UltimateKits;
 import com.delukeklein.ultimatekits.kit.Kit;
@@ -29,7 +30,7 @@ public class KitConfiguration extends AbstractConfiguration {
 	}
 	
 	public List<String> getKitNames() {
-		final List<String> names = List.copyOf(getKitKeys());
+		final List<String> names = new ArrayList(List.copyOf(getKitKeys()));
 		
 		names.replaceAll(s -> getKit(s).getName());
 				

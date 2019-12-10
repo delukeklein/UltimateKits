@@ -42,7 +42,12 @@ public class BaseLevel implements Level, ConfigurationSerializable {
 	public int getPrice() {
 		return price;
 	}
-	
+
+	@Override
+	public boolean hasName(final String name) {
+		return name.equalsIgnoreCase(this.name);
+	}
+
 	@Override
 	public String getName() {
 		return name;

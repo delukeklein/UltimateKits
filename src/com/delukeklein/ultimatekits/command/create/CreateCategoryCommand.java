@@ -1,7 +1,5 @@
 package com.delukeklein.ultimatekits.command.create;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import com.delukeklein.ultimatekits.command.SubCommand;
@@ -26,7 +24,7 @@ public class CreateCategoryCommand implements SubCommand {
 			categoryConfig.save();
 		}
 		
-		return contains;
+		return !contains;
 	}
 
 	@Override

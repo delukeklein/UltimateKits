@@ -11,11 +11,11 @@ import com.delukeklein.ultimatekits.UltimateKits;
 
 abstract class AbstractConfiguration {
 
-	protected FileConfiguration config;
+	protected final FileConfiguration config;
 	
 	private final static String EXTENSION = ".yml";
 	
-	private File file;
+	private final File file;
 
 	protected AbstractConfiguration(final UltimateKits plugin, final String name, final String folder, final boolean saveResource) {
 		config = new YamlConfiguration();
