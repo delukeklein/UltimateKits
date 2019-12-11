@@ -4,8 +4,9 @@ import org.bukkit.command.CommandSender;
 
 import com.delukeklein.ultimatekits.command.create.CreateKitCommand;
 import com.delukeklein.ultimatekits.configuration.KitConfiguration;
+import org.bukkit.entity.Player;
 
-public class KitCommand extends AbstractCommand {
+public final class KitCommand extends AbstractCommand implements NoArgumentCommand {
 
 	private final static String CREATE = "create";
 
@@ -14,10 +15,18 @@ public class KitCommand extends AbstractCommand {
 	}
 
 	@Override
-	protected void execute(final  CommandSender sender, final SubCommand subCommand, final String[] args) {
-		if (subCommand.execute(sender, args)) {
-			subCommand.severe(sender, args);
-		}
+	public void severe(final CommandSender sender, final String label, final String[] args) {
+		//TODO Message the sender the syntax error.
 	}
 
+	@Override
+	public boolean execute(final CommandSender sender) {
+		final boolean isPlayer = sender instanceof Player;
+
+		if(isPlayer) {
+			//TODO Open create category inventory.
+		}
+
+		return isPlayer;
+	}
 }

@@ -7,7 +7,7 @@ import com.delukeklein.ultimatekits.UltimateKits;
 public class CategoryConfiguration extends AbstractConfiguration {
 	
 	public CategoryConfiguration(UltimateKits plugin) {
-		super(plugin, "categories", "", true);
+		super(plugin, "categories");
 	}
 	
 	public void addCategory(final String category) {

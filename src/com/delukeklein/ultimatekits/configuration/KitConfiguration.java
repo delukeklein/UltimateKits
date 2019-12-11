@@ -10,7 +10,7 @@ import com.delukeklein.ultimatekits.kit.Kit;
 public class KitConfiguration extends AbstractConfiguration {
 	
 	public KitConfiguration(UltimateKits plugin) {
-		super(plugin, "kits", "", true);
+		super(plugin, "kits");
 	}
 
 	public Kit getKit(final String kitName) {

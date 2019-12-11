@@ -14,6 +14,11 @@ public class CreateCategoryCommand implements SubCommand {
 	}
 
 	@Override
+	public void severe(final CommandSender sender, final String label, final String[] args) {
+		//TODO Message the sender the syntax error.
+	}
+
+	@Override
 	public boolean execute(final CommandSender sender, final String[] args) {
 		final String category = String.join("", args);
 		
@@ -26,10 +31,4 @@ public class CreateCategoryCommand implements SubCommand {
 		
 		return !contains;
 	}
-
-	@Override
-	public void severe(final CommandSender sender, final String[] args) {
-		sender.sendMessage("OI");
-	}
-
 }

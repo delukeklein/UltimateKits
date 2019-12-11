@@ -17,24 +17,15 @@ abstract class AbstractConfiguration {
 	
 	private final File file;
 
-	protected AbstractConfiguration(final UltimateKits plugin, final String name, final String folder, final boolean saveResource) {
+	protected AbstractConfiguration(final UltimateKits plugin, final String name) {
 		config = new YamlConfiguration();
 		
-        file = new File(plugin.getDataFolder() + folder, name + EXTENSION);
+        file = new File(plugin.getDataFolder(), name + EXTENSION);
         
         if (!file.exists()) {
-            file.getParentFile().mkdirs();
-      
-            if(saveResource) {
-            	plugin.saveResource(name + EXTENSION, false);
-            }
-            else {
-            	try {
-					file.createNewFile();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-            }
+            if(file.getParentFile().mkdirs()) {
+				plugin.saveResource(name + EXTENSION, false);
+			}
          }
 
         reload();

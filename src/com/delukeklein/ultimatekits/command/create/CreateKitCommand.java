@@ -12,9 +12,14 @@ public class CreateKitCommand implements SubCommand {
 	public CreateKitCommand(final KitConfiguration kitConfig) {
 		this.kitConfig = kitConfig;
 	}
+
+	@Override
+	public void severe(final CommandSender sender, final String label, final String[] args) {
+		//TODO Message the sender the syntax error.
+	}
 	
 	@Override
-	public boolean execute(CommandSender sender, String[] args) {		
+	public boolean execute(final CommandSender sender, final String[] args) {
 		final String name = String.join(" ", args);
 		
 		final boolean contains = kitConfig.contains(name);
@@ -25,10 +30,5 @@ public class CreateKitCommand implements SubCommand {
 		}
 		
 		return !contains;
-	}
-
-	@Override
-	public void severe(CommandSender sender, String[] args) {
-		
 	}
 }

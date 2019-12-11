@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="UltimateKits" target="1.11" />
-      <module name="UltimateKits-API" target="1.5" />
+      <module name="UltimateKits-API" target="1.11" />
     </bytecodeTargetLevel>
   </component>
 </project>
