@@ -19,7 +19,7 @@ public class CreateCategoryCommand implements SubCommand {
 	}
 
 	@Override
-	public boolean execute(final CommandSender sender, final String[] args) {
+	public boolean onExecute(final CommandSender sender, final String label, final String[] args) {
 		final String category = String.join("", args);
 		
 		final boolean contains = categoryConfig.contains(category);

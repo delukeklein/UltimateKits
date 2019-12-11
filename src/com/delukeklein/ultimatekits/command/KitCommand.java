@@ -1,12 +1,14 @@
 package com.delukeklein.ultimatekits.command;
 
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import com.delukeklein.ultimatekits.command.create.CreateKitCommand;
 import com.delukeklein.ultimatekits.configuration.KitConfiguration;
 import org.bukkit.entity.Player;
 
-public final class KitCommand extends AbstractCommand implements NoArgumentCommand {
+public final class KitCommand extends ArgumentCommand implements CommandExecutor, NoArgumentCommand {
 
 	private final static String CREATE = "create";
 
@@ -20,7 +22,7 @@ public final class KitCommand extends AbstractCommand implements NoArgumentComma
 	}
 
 	@Override
-	public boolean execute(final CommandSender sender) {
+	public boolean onNoArgument(final CommandSender sender) {
 		final boolean isPlayer = sender instanceof Player;
 
 		if(isPlayer) {
@@ -29,4 +31,5 @@ public final class KitCommand extends AbstractCommand implements NoArgumentComma
 
 		return isPlayer;
 	}
+
 }
