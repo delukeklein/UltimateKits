@@ -1,11 +1,9 @@
 package com.delukeklein.ultimatekits.command;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-
 import com.delukeklein.ultimatekits.command.create.CreateKitCommand;
 import com.delukeklein.ultimatekits.configuration.KitConfiguration;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public final class KitCommand extends ArgumentCommand implements CommandExecutor, NoArgumentCommand {
@@ -26,9 +24,9 @@ public final class KitCommand extends ArgumentCommand implements CommandExecutor
 		final boolean isPlayer = sender instanceof Player;
 
 		if(isPlayer) {
+			sender.sendMessage("Opened kit inventory");
 			//TODO Open create category inventory.
 		}
-
 		return isPlayer;
 	}
 

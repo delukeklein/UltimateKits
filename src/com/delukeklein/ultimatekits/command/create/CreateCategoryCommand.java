@@ -1,9 +1,8 @@
 package com.delukeklein.ultimatekits.command.create;
 
-import org.bukkit.command.CommandSender;
-
 import com.delukeklein.ultimatekits.command.SubCommand;
 import com.delukeklein.ultimatekits.configuration.CategoryConfiguration;
+import org.bukkit.command.CommandSender;
 
 public class CreateCategoryCommand implements SubCommand {
 

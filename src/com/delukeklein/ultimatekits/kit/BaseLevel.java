@@ -1,13 +1,13 @@
 package com.delukeklein.ultimatekits.kit;
 
+import com.delukeklein.ultimatekits.kit.equipment.Level;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
+import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
-import org.bukkit.inventory.ItemStack;
-
-import com.delukeklein.ultimatekits.kit.equipment.Level;
 
 public class BaseLevel implements Level, ConfigurationSerializable {
 
@@ -63,7 +63,7 @@ public class BaseLevel implements Level, ConfigurationSerializable {
 		return storage;
 	}
 
-	@Override
+	@Override @NotNull
 	public Map<String, Object> serialize() {
 		final Map<String, Object> map = new HashMap<>();
 		

@@ -1,8 +1,8 @@
 package com.delukeklein.ultimatekits.configuration;
 
-import java.util.List;
-
 import com.delukeklein.ultimatekits.UltimateKits;
+
+import java.util.List;
 
 public class CategoryConfiguration extends AbstractConfiguration {
 	

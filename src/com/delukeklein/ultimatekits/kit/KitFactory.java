@@ -6,7 +6,7 @@ public final class KitFactory {
 
 	private int price;
 
-	private boolean levelable;
+	private boolean isLeveled;
 
 	private String name;
 
@@ -16,7 +16,7 @@ public final class KitFactory {
 	
 	public KitFactory() {
 		this.price = 0;
-		this.levelable = false;
+		this.isLeveled = false;
 		this.name = "";
 		this.category = "";
 		this.description = List.of("");
@@ -27,8 +27,8 @@ public final class KitFactory {
 		return this;
 	}
 
-	public final KitFactory isLevelable(final boolean levelable) {
-		this.levelable = levelable;
+	public final KitFactory isLeveled(final boolean isLeveled) {
+		this.isLeveled = isLeveled;
 		return this;
 	}
 
@@ -48,7 +48,7 @@ public final class KitFactory {
 	}
 
 	public Kit build() {
-		final Kit kit = (levelable) ? new LevelKit(name) : new BasicKit(name);
+		final Kit kit = (isLeveled) ? new LevelKit(name) : new BasicKit(name);
 
 		kit.setPrice(price);
 		kit.setCategory(category);

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <pattern value="com.delukeklein.ultimatekits.configuration.AbstractConfiguration" method="AbstractConfiguration" />
+    <pattern value="com.delukeklein.ultimatekits.kit.BaseLevel" />
+  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="D:/" />
   </component>

@@ -1,9 +1,8 @@
 package com.delukeklein.ultimatekits.command;
 
-import org.bukkit.command.CommandSender;
-
 import com.delukeklein.ultimatekits.command.create.CreateCategoryCommand;
 import com.delukeklein.ultimatekits.configuration.CategoryConfiguration;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CategoryCommand extends ArgumentCommand implements NoArgumentCommand {
@@ -26,9 +25,9 @@ public class CategoryCommand extends ArgumentCommand implements NoArgumentComman
 		final boolean isPlayer = sender instanceof Player;
 
 		if(isPlayer) {
+			sender.sendMessage("Opened category gui");
 			//TODO Open create category inventory.
 		}
-
 		return isPlayer;
 	}
 }

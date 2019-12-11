@@ -1,11 +1,10 @@
 package com.delukeklein.ultimatekits.kit;
 
-import java.util.List;
-import java.util.Map;
-
+import com.delukeklein.ultimatekits.kit.equipment.Level;
 import org.bukkit.entity.Player;
 
-import com.delukeklein.ultimatekits.kit.equipment.Level;
+import java.util.List;
+import java.util.Map;
 
 public final class LevelKit extends AbstractKit implements Levelable {
 	
@@ -36,7 +35,7 @@ public final class LevelKit extends AbstractKit implements Levelable {
 	
 	@Override
 	public boolean removeLevel(final String levelName) {
-		return levels.removeIf(l -> l.getName() == levelName);
+		return levels.removeIf(l -> l.hasName(levelName));
 	}
 
 	@Override

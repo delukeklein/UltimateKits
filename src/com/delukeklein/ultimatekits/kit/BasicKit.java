@@ -1,13 +1,12 @@
 package com.delukeklein.ultimatekits.kit;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
+import com.delukeklein.ultimatekits.kit.equipment.Equipment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.delukeklein.ultimatekits.kit.equipment.Equipment;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public final class BasicKit extends AbstractKit implements Equipment {
 	

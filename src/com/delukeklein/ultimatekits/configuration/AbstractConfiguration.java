@@ -1,13 +1,12 @@
 package com.delukeklein.ultimatekits.configuration;
 
-import java.io.File;
-import java.io.IOException;
-
+import com.delukeklein.ultimatekits.UltimateKits;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import com.delukeklein.ultimatekits.UltimateKits;
+import java.io.File;
+import java.io.IOException;
 
 abstract class AbstractConfiguration {
 
