@@ -14,7 +14,7 @@
 	<repositories>
 		<repository>
 			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
+			<url>https://www.jitpack.io</url>
 		</repository>
 
 		<repository>
@@ -27,12 +27,36 @@
 		<dependency>
 			<groupId>com.github.delukeklein</groupId>
 			<artifactId>UltimateKits-API</artifactId>
-			<version>c9c445ce21</version>
+			<version>master-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>1.15-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
