@@ -1,8 +1,0 @@
-main: com.delukeklein.ultimatekits.UltimateKits
-name: UltimateKits
-version: 0.0.2
-api-version: '1.13'
-commands:
-  kit: ''
-    description: Command for kit related commands.
-    usage: '/kit'

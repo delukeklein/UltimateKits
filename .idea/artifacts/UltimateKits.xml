@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UltimateKits">
+    <output-path>$PROJECT_DIR$/out/artifacts/UltimateKits</output-path>
+    <root id="archive" name="UltimateKits.jar">
+      <element id="module-output" name="ultimatekits-api" />
+      <element id="module-output" name="UltimteKits" />
+    </root>
+  </artifact>
+</component>
