@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="UltimateKits-API" />
         <module name="UltimateKits" />
-        <module name="ultimatekits-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="UltimateKits" target="11" />
-      <module name="ultimatekits-api" target="11" />
+      <module name="UltimateKits-API" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
