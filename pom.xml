@@ -4,21 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.delukeklein</groupId>
 	<artifactId>ultimatekits</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>UltimateKits</name>
 
 	<properties>
-    	<maven.compiler.source>11</maven.compiler.source>
-    	<maven.compiler.target>11</maven.compiler.target>
+    		<maven.compiler.source>11</maven.compiler.source>
+    		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<repositories>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://www.jitpack.io</url>
-		</repository>
-
 		<repository>
 			<id>spigot-repo</id>
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -27,17 +22,16 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.delukeklein</groupId>
-			<artifactId>UltimateKits-API</artifactId>
-			<version>-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>1.15-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+  			<groupId>com.delukeklein</groupId>
+  			<artifactId>ultimatekits-api</artifactId>
+  			<version>0.0.2</version>
+		</dependency> 
 	</dependencies>
 
 	<build>
