@@ -5,10 +5,12 @@
 	<groupId>com.delukeklein</groupId>
 	<artifactId>ultimatekits</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
+	<name>UltimateKits</name>
 
 	<properties>
     	<maven.compiler.source>11</maven.compiler.source>
     	<maven.compiler.target>11</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<repositories>
@@ -27,7 +29,8 @@
 		<dependency>
 			<groupId>com.github.delukeklein</groupId>
 			<artifactId>UltimateKits-API</artifactId>
-			<version>master-SNAPSHOT</version>
+			<version>-SNAPSHOT</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
@@ -41,22 +44,20 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
