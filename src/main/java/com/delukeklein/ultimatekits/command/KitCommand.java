@@ -21,6 +21,6 @@ public final class KitCommand extends CompositeCommand {
 
 	@Override
 	public void onNoArgument(final CommandSender sender) {
-		//TODO Implements situation on
+
 	}
 }

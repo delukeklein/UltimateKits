@@ -5,6 +5,8 @@ import com.delukeklein.ultimatekits.configuration.KitConfiguration;
 import com.delukeklein.ultimatekits.kit.BasicKit;
 import org.bukkit.command.CommandSender;
 
+import java.util.List;
+
 public class CreateKitCommand implements SubCommand {
 
 	private final KitConfiguration kitConfig;
@@ -36,4 +38,10 @@ public class CreateKitCommand implements SubCommand {
 
         return !containsKit;
 	}
+
+    @Override
+    public List<String> tabComplete(CommandSender sender, String label, String[] args) {
+        return List.of("<name>");
+    }
+
 }

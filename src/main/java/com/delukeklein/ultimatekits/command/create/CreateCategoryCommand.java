@@ -4,6 +4,8 @@ import com.delukeklein.ultimatekits.command.SubCommand;
 import com.delukeklein.ultimatekits.configuration.CategoryConfiguration;
 import org.bukkit.command.CommandSender;
 
+import java.util.List;
+
 public class CreateCategoryCommand implements SubCommand {
 
 	private final CategoryConfiguration categoryConfig;
@@ -36,4 +38,8 @@ public class CreateCategoryCommand implements SubCommand {
 		return !contains;
 	}
 
+	@Override
+	public List<String> tabComplete(CommandSender sender, String label, String[] args) {
+		return List.of("<name>");
+	}
 }
