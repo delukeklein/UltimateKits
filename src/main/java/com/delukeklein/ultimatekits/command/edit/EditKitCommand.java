@@ -13,12 +13,12 @@ public class EditKitCommand extends CompositeSubCommand {
     }
 
     @Override
-    public void onNoArgument(CommandSender sender) {
-
+    public void severe(final CommandSender sender, final String label, final String[] args) {
+        //TODO Message the sender the syntax error.
     }
 
     @Override
-    public void severe(CommandSender sender, String label, String[] args) {
+    public void onArgumentless(final CommandSender commandSender) {
 
     }
 }

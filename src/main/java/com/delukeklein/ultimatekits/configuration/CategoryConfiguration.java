@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CategoryConfiguration extends AbstractConfiguration {
 	
-	public CategoryConfiguration(UltimateKits plugin) {
+	public CategoryConfiguration(final UltimateKits plugin) {
 		super(plugin, "categories");
 	}
 	

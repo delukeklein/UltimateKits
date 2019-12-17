@@ -17,7 +17,7 @@ public class CategoryCommand extends CompositeCommand {
 	}
 
 	@Override
-	public void onNoArgument(final CommandSender sender) {
+	public void onArgumentless(final CommandSender commandSender) {
 
 	}
 }

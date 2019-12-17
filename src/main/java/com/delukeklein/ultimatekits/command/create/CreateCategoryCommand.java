@@ -15,17 +15,12 @@ public class CreateCategoryCommand implements SubCommand {
 	}
 
 	@Override
-	public void onNoArgument(CommandSender sender) {
-
-	}
-
-	@Override
 	public void severe(final CommandSender sender, final String label, final String[] args) {
 		//TODO Message the sender the syntax error.
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, String label, String[] args) {
+	public boolean execute(final CommandSender sender, final String label, final String[] args) {
 		final String category = String.join("", args);
 
 		final boolean contains = categoryConfig.contains(category);
@@ -39,7 +34,7 @@ public class CreateCategoryCommand implements SubCommand {
 	}
 
 	@Override
-	public List<String> tabComplete(CommandSender sender, String label, String[] args) {
+	public List<String> tabComplete(final CommandSender sender, final String label, final String[] args) {
 		return List.of("<name>");
 	}
 }

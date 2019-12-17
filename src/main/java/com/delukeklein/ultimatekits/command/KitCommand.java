@@ -20,7 +20,7 @@ public final class KitCommand extends CompositeCommand {
 	}
 
 	@Override
-	public void onNoArgument(final CommandSender sender) {
+	public void onArgumentless(final CommandSender commandSender) {
 
 	}
 }

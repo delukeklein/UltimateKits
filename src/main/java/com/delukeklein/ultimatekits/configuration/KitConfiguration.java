@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class KitConfiguration extends AbstractConfiguration {
 	
-	public KitConfiguration(UltimateKits plugin) {
+	public KitConfiguration(final UltimateKits plugin) {
 		super(plugin, "kits");
 	}
 

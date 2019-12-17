@@ -21,12 +21,7 @@ public class CreateKitCommand implements SubCommand {
 	}
 
     @Override
-    public void onNoArgument(CommandSender sender) {
-
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, String label, String[] args) {
+    public boolean execute(final CommandSender sender, final String label, final String[] args) {
         final String name = String.join(" ", args);
 
         final boolean containsKit = kitConfig.contains(name);
@@ -40,8 +35,7 @@ public class CreateKitCommand implements SubCommand {
 	}
 
     @Override
-    public List<String> tabComplete(CommandSender sender, String label, String[] args) {
+    public List<String> tabComplete(final CommandSender sender, final String label, final String[] args) {
         return List.of("<name>");
     }
-
 }
