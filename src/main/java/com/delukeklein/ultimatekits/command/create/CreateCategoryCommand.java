@@ -4,6 +4,7 @@ import com.delukeklein.ultimatekits.command.SubCommand;
 import com.delukeklein.ultimatekits.configuration.CategoryConfiguration;
 import org.bukkit.command.CommandSender;
 
+import java.util.Collections;
 import java.util.List;
 
 public class CreateCategoryCommand implements SubCommand {
@@ -16,25 +17,23 @@ public class CreateCategoryCommand implements SubCommand {
 
 	@Override
 	public void severe(final CommandSender sender, final String label, final String[] args) {
-		//TODO Message the sender the syntax error.
+
 	}
 
 	@Override
 	public boolean execute(final CommandSender sender, final String label, final String[] args) {
-		final String category = String.join("", args);
+		final String category = String.join(" ", args);
 
-		final boolean contains = categoryConfig.contains(category);
-
-		if (!contains) {
-			categoryConfig.addCategory(category);
+		if (!categoryConfig.contains(category)) {
+			categoryConfig.set(category, null);
 			categoryConfig.save();
 		}
 
-		return !contains;
+		return !categoryConfig.contains(category);
 	}
 
 	@Override
 	public List<String> tabComplete(final CommandSender sender, final String label, final String[] args) {
-		return List.of("<name>");
+		return args.length == 0 ? Collections.EMPTY_LIST : List.of("[<name>]");
 	}
 }

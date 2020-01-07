@@ -1,8 +1,10 @@
 package com.delukeklein.ultimatekits.kit;
 
+import com.delukeklein.ultimatekits.kit.data.Upgradeable;
 import com.delukeklein.ultimatekits.kit.equipment.Level;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,29 +15,29 @@ public final class LevelKit extends AbstractKit implements Upgradeable {
 	public LevelKit(final String name) {
 		super(name);
 
-		this.levels = List.of();
+		this.levels = new ArrayList<>();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public LevelKit(final Map<String, Object> map) {
+	public LevelKit(Map<String, Object> map) {
 		super(map);
 		
 		this.levels = (List<Level>) map.get("levels");
 	}
 
 	@Override
-	public void giveKit(final Player player) {
-		
+	public void give(final Player player) {
+		//TODO Give kit to player.
 	}
-	
+
 	@Override
-	public boolean addLevel(final Level level) {
+	public boolean add(final Level level) {
 		return levels.add(level);
 	}
-	
+
 	@Override
-	public boolean removeLevel(final String levelName) {
-		return levels.removeIf(l -> l.hasName(levelName));
+	public boolean remove(final String name) {
+		return levels.removeIf(l -> name.equalsIgnoreCase(l.getName()));
 	}
 
 	@Override

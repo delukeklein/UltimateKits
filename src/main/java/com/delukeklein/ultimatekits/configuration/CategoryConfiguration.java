@@ -1,28 +1,42 @@
 package com.delukeklein.ultimatekits.configuration;
 
 import com.delukeklein.ultimatekits.UltimateKits;
+import com.delukeklein.ultimatekits.kit.Category;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryConfiguration extends AbstractConfiguration {
-	
-	public CategoryConfiguration(final UltimateKits plugin) {
-		super(plugin, "categories");
-	}
-	
-	public void addCategory(final String category) {
-		final List<String> categories = getCategories();
-		
-		categories.add(category);
+public class CategoryConfiguration extends AbstractConfiguration<Category> {
 
-		config.set("categories", categories);
-	}
-	
-	public boolean contains(final String category) {
-		return getCategories().contains(category);
-	}
-	
-	public List<String> getCategories() {
-		return config.getStringList("categories");
-	}
+    public CategoryConfiguration(final UltimateKits plugin) {
+        super(plugin, "categories");
+    }
+
+    public String getDefaultCategory() {
+        return getKeys().isEmpty() ? "" : getCategoryNames().get(0);
+    }
+
+    public String findFirstByName(final String name) {
+        String result = getDefaultCategory();
+
+        for (final String key : getKeys()) {
+            result = get(key).getName();
+
+            if(result.equalsIgnoreCase(name)) {
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    public List<String> getCategoryNames() {
+        final ArrayList<String> names = new ArrayList<>();
+
+        for (final String key : getKeys()) {
+            names.add(get(key).getName());
+        }
+
+        return names;
+    }
 }

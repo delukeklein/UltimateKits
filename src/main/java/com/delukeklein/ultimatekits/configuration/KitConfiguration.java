@@ -1,41 +1,47 @@
 package com.delukeklein.ultimatekits.configuration;
 
-import com.delukeklein.ultimatekits.kit.Kit;
-
 import com.delukeklein.ultimatekits.UltimateKits;
+import com.delukeklein.ultimatekits.kit.Kit;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
+import java.util.function.Predicate;
 
+public final class KitConfiguration extends AbstractConfiguration<Kit> {
 
-public class KitConfiguration extends AbstractConfiguration {
-	
 	public KitConfiguration(final UltimateKits plugin) {
 		super(plugin, "kits");
 	}
 
-	public Kit getKit(final String kitName) {
-		return (Kit) config.get(kitName);
+	public void replace(final String oldKitName, final Kit kit) {
+		remove(oldKitName);
+		set(kit.getName(), kit);
+		save();
 	}
-	
-	public void setKit(final Kit kit) {
-		config.set(parseToKey(kit.getName()), kit);
-	}
-	
-	public boolean contains(final String name) {
-		return getKitKeys().contains(parseToKey(name));
-	}
-	
-	public Set<String> getKitKeys() {
-		return config.getKeys(false);
-	}
-	
-	public List<String> getKitNames() {
-		final ArrayList<String> names = new ArrayList<>(List.copyOf(getKitKeys()));
 
-		names.replaceAll(s -> getKit(s).getName());
-				
+	public Optional<String> findFirstByName(final Predicate<? super String> predicate) {
+		Optional<String> optional = Optional.empty();
+
+		for (final String key : getKeys()) {
+			final String name = get(key).getName();
+
+			if(predicate.test(name)) {
+				optional = Optional.of(name);
+				break;
+			}
+		}
+
+		return optional;
+	}
+
+	public List<String> getKitNames() {
+		final List<String> names = new ArrayList<>();
+
+		for (final String key : getKeys()) {
+			names.add(get(key).getName());
+		}
+
 		return names;
 	}
 }

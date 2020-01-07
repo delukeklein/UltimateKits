@@ -9,40 +9,43 @@ import java.util.List;
 import java.util.Map;
 
 public final class BasicKit extends AbstractKit implements Equipment {
-	
+
+	private final static String ARMOR = "armor";
+	private final static String STORAGE = "storage";
+
 	private ItemStack[] armor;
 	private ItemStack[] storage;
 
 	public BasicKit(final String name) {
 		super(name);
-		
-		this.armor = new ItemStack[0];
-		this.storage = new ItemStack[0];
+
+		armor = new ItemStack[0];
+		storage = new ItemStack[0];
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public BasicKit(Map<String, Object> map) {
 		super(map);
-		
-		armor = ((List<ItemStack>) map.get("armor")).toArray(new ItemStack[0]);
-		storage = ((List<ItemStack>) map.get("storage")).toArray(new ItemStack[0]);
-	}
-	
-	@Override
-	public void giveKit(Player player) {
-		// TODO Auto-generated method stub
-	}
-	
-	@Override
-	public void setArmor(ItemStack[] armor) {
-		this.armor = armor;	
+
+		armor = ((List<ItemStack>) map.get(ARMOR)).toArray(new ItemStack[0]);
+		storage = ((List<ItemStack>) map.get(STORAGE)).toArray(new ItemStack[0]);
 	}
 
 	@Override
-	public void setStorage(ItemStack[] storage) {
-		this.storage = storage;	
+	public void give(final Player player) {
+		//TODO give player the kit;
 	}
-	
+
+	@Override
+	public void setArmor(final ItemStack[] armor) {
+		this.armor = Arrays.copyOf(armor, armor.length);
+	}
+
+	@Override
+	public void setStorage(final ItemStack[] storage) {
+		this.storage = Arrays.copyOf(storage, storage.length);
+	}
+
 	@Override
 	public ItemStack[] getArmor() {
 		return armor;
@@ -52,14 +55,14 @@ public final class BasicKit extends AbstractKit implements Equipment {
 	public ItemStack[] getStorage() {
 		return storage;
 	}
-	
+
 	@Override
 	public Map<String, Object> serialize() {
 		final Map<String, Object> map = super.serialize();
 
-		map.put("armor", Arrays.asList(armor));
-		map.put("storage", Arrays.asList(storage));
-		
+		map.put(ARMOR, armor);
+		map.put(STORAGE, storage);
+
 		return map;
 	}
 }
